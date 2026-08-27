@@ -1,1 +1,428 @@
-__EDITION__
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global AI Trend Watch — 2026-08-27</title>
+  <style>
+    :root {
+      --bg: #05060a;
+      --surface: #111827;
+      --surface-alt: #020617;
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --accent: #22c55e;
+      --border-breaking: #ef4444;
+      --border-viral: #f97316;
+      --border-impact: #22c55e;
+      --border-wildcard: #a855f7;
+      --radius: 0.75rem;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.85);
+      --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: var(--space-6);
+    }
+
+    .app-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(15,23,42,0.9), rgba(6,12,26,0.95));
+      border-radius: 1.25rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,0.22);
+      overflow: hidden;
+    }
+
+    header.app-header {
+      padding: var(--space-6) var(--space-6) var(--space-4);
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .logo-mark svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .title-text h1 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .title-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      background: radial-gradient(circle at top, rgba(34,197,94,0.16), transparent 55%);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .tabs {
+      display: flex;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6) var(--space-4);
+      border-bottom: 1px solid rgba(148,163,184,0.22);
+      overflow-x: auto;
+    }
+
+    .tab {
+      position: relative;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: rgba(15,23,42,0.8);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .tab::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid rgba(148,163,184,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-fast);
+    }
+    .tab:hover {
+      color: var(--text);
+      box-shadow: 0 0 0 1px rgba(148,163,184,0.55);
+    }
+    .tab:hover::before { opacity: 1; }
+    .tab[data-active="true"] {
+      color: #f9fafb;
+      border-color: rgba(34,197,94,0.5);
+      background: radial-gradient(circle at top left, rgba(34,197,94,0.25), rgba(15,23,42,0.95));
+      box-shadow: 0 0 0 1px rgba(34,197,94,0.65);
+    }
+
+    main.app-main {
+      padding: var(--space-4) var(--space-6) var(--space-6);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .card {
+      position: relative;
+      background: radial-gradient(circle at top, rgba(15,23,42,0.9), rgba(15,23,42,0.95));
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: 0 12px 40px rgba(15,23,42,0.85);
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at top left, rgba(248,250,252,0.08), transparent 55%);
+      opacity: 0.8;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, var(--border-breaking), transparent);
+      opacity: 0.7;
+    }
+
+    .card[data-category="viral"]::after {
+      background: linear-gradient(to bottom, var(--border-viral), transparent);
+    }
+    .card[data-category="high-impact"]::after {
+      background: linear-gradient(to bottom, var(--border-impact), transparent);
+    }
+    .card[data-category="wildcard"]::after {
+      background: linear-gradient(to bottom, var(--border-wildcard), transparent);
+    }
+
+    .card:hover {
+      transform: translateY(-2px) translateZ(0);
+      box-shadow: 0 24px 65px rgba(15,23,42,0.9);
+      border-color: rgba(148,163,184,0.75);
+      background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(6,12,26,0.98));
+    }
+
+    .card-header h2 {
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .card-trend {
+      font-size: 0.8rem;
+      color: #a5b4fc;
+    }
+
+    .empty-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: var(--space-4);
+      text-align: center;
+    }
+
+    .archive-link {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: var(--space-2);
+    }
+    .archive-link:hover { color: #e5e7eb; }
+
+    @media (max-width: 768px) {
+      body { padding: var(--space-3); }
+      header.app-header { padding: var(--space-4); }
+      .tabs { padding-inline: var(--space-4); }
+      main.app-main { padding: var(--space-4); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="title-row">
+        <div class="logo-mark">
+          <svg viewBox="0 0 32 32" aria-label="Global AI Trend Watch logo" role="img">
+            <defs>
+              <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22c55e" />
+                <stop offset="50%" stop-color="#0ea5e9" />
+                <stop offset="100%" stop-color="#a855f7" />
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="28" height="28" rx="10" fill="#020617" stroke="#22c55e" stroke-width="1.2" />
+            <circle cx="16" cy="16" r="8.5" fill="none" stroke="url(#orb)" stroke-width="1.2" />
+            <path d="M10 16c1.2-3 3.3-4.5 6-4.5s4.8 1.5 6 4.5-3.3 4.5-6 4.5-4.8-1.5-6-4.5z" fill="url(#orb)" opacity="0.45" />
+            <circle cx="16" cy="16" r="2" fill="#f9fafb" />
+          </svg>
+          <div class="title-text">
+            <h1>Global AI Trend Watch</h1>
+            <p>Signal-only digest of AI capability, deployment and regulation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="meta-row">
+        <div>
+          <span class="chip">Edition 2026-08-27</span>
+        </div>
+        <div>
+          <span>Last 24h — multi-power coverage across US, EU, China, India, Russia, Israel/Middle East, Africa.</span>
+        </div>
+      </div>
+      <a class="archive-link" href="../archive.html">
+        <span>← View full archive</span>
+      </a>
+    </header>
+    <nav class="tabs" aria-label="Categories">
+      <button class="tab" data-category="all" data-active="true" type="button">All</button>
+      <button class="tab" data-category="breaking" type="button">Breaking</button>
+      <button class="tab" data-category="viral" type="button">Viral</button>
+      <button class="tab" data-category="high-impact" type="button">High-Impact</button>
+      <button class="tab" data-category="wildcard" type="button">Wildcard</button>
+    </nav>
+    <main class="app-main">
+      <section aria-label="Stories">
+        <div id="cards" class="cards-grid">
+          <article class="card" data-category="breaking">
+  <header class="card-header">
+    <h2>US frontier AI review regime quietly enters operational phase</h2>
+  </header>
+  <p class="card-body">The US government has now operationalized a classified framework to review the most capable "frontier" AI models for cybersecurity and national-security risk before release, granting agencies up to a 30-day pre-launch access window to systems from labs like OpenAI, Anthropic, Google, Meta and NVIDIA. This marks a structural shift from open launches to government-gated deployment for top-tier models, a leading indicator that state security concerns will increasingly shape how and when frontier AI capabilities reach the market over the next 3-12 months.</p>
+  <p class="card-trend"><em>AI/frontier models, security/privacy, global elite/power consolidation</em></p>
+</article>
+<article class="card" data-category="breaking">
+  <header class="card-header">
+    <h2>EU AI Act transparency duties start to bite for global AI deployers</h2>
+  </header>
+  <p class="card-body">As of 2 August 2026, the EU AI Act’s Article 50 transparency obligations are enforceable, requiring any in-scope AI systems and general-purpose models used in the EU to label AI-generated content, disclose AI interaction, and meet documentation and model-card requirements, with fines up to 15 million euros or 3% of global turnover for noncompliance. Because these rules apply extraterritorially to US, Chinese, Indian and other providers whose outputs reach EU users, they foreshadow a world where AI UX and product design are constrained by mandatory disclosure and provenance, forcing start-ups and big labs alike to bake compliance into core architecture.</p>
+  <p class="card-trend"><em>AI/frontier models, regulation, security/privacy</em></p>
+</article>
+<article class="card" data-category="breaking">
+  <header class="card-header">
+    <h2>China formalizes national framework for AI agents and anthropomorphic chatbots</h2>
+  </header>
+  <p class="card-body">China’s July 2026 regulatory package introduced ethics guidelines, national standards for data transfer and audits, and the country’s first dedicated rules for anthropomorphic AI interaction services and intelligent agents, including mandatory algorithm filing, safety assessments, addiction controls and crisis-intervention protocols once services pass user thresholds. By treating AI agents as a separate regulatory class and targeting 70% adoption of intelligent agents in smart terminals by 2027, Beijing is signaling an aggressive push toward agentic AI in everyday devices, a leading indicator of where consumer and industrial human-AI interaction will move in the next few years.</p>
+  <p class="card-trend"><em>AI/frontier models, biohacking/neurotech, security/privacy, geopolitics/great-power competition</em></p>
+</article>
+<article class="card" data-category="high-impact">
+  <header class="card-header">
+    <h2>Russia pivots AI strategy toward wartime command systems and combat aviation</h2>
+  </header>
+  <p class="card-body">Russia’s revised National AI Strategy to 2030 and June 2026 statements from Defense Minister Andrei Belousov confirm a shift from civilian modernization toward integrating AI, robotics and automated command systems across military management, logistics, reconnaissance and drone warfare. With the Su-57D two-seat stealth fighter now positioned as a testbed to command unmanned combat aircraft and swarms using "combat AI," Russia is moving AI from experimental labs into core warfighting infrastructure, pointing to an acceleration of AI-enabled air and drone operations across great-power militaries.</p>
+  <p class="card-trend"><em>security/privacy, AI/frontier models, humanoids/robotics, geopolitics/great-power competition</em></p>
+</article>
+<article class="card" data-category="high-impact">
+  <header class="card-header">
+    <h2>Israel’s AI-driven targeting in Gaza becomes global template for algorithmic warfare debates</h2>
+  </header>
+  <p class="card-body">Investigations and human-rights assessments document Israel’s use of systems like "Gospel," "Lavender," "Where&#x27;s Daddy?" and Server in the Sky to generate kill lists, assign risk scores to Gaza residents, and automate target selection with minimal human review, dramatically scaling the volume and speed of strikes. These systems illustrate how data-rich militaries can operationalize AI as decision-support for lethal targeting, making questions of accountability, bias, and civilian harm central to forthcoming international norms on military AI in the next 3-12 months.</p>
+  <p class="card-trend"><em>security/privacy, AI/frontier models, global elite/power consolidation, geopolitics/great-power competition</em></p>
+</article>
+<article class="card" data-category="high-impact">
+  <header class="card-header">
+    <h2>EU AI Act timeline reshapes compliance roadmaps for high-risk and GPAI systems worldwide</h2>
+  </header>
+  <p class="card-body">The EU AI Act’s phased implementation now locks in full enforcement of transparency and GPAI obligations from August 2026, with stand-alone high-risk systems due December 2027 and embedded high-risk AI in regulated products due August 2028, backed by EU-wide supervisory capacity. For US, UK, Indian, Israeli and Chinese firms deploying AI into EU-linked sectors, this staggered but unavoidable schedule is forcing multi-year redesigns of logging, human oversight, data governance and compliance pipelines, making Brussels a central driver of global AI safety tooling and internal auditing practices.</p>
+  <p class="card-trend"><em>AI/frontier models, regulation, security/privacy, global elite/power consolidation</em></p>
+</article>
+<article class="card" data-category="viral">
+  <header class="card-header">
+    <h2>Humanoid robotics funding explodes to $8.6B as 2026 eclipses last year’s total mid-year</h2>
+  </header>
+  <p class="card-body">Dealroom data and investor reports show humanoid robot startups have already raised about $8.6 billion in 2026, 1.8 times all of 2025, with Figure AI, Tesla Optimus, NEURA Robotics and others attracting multi-billion and mega-round financing. The rapid capital surge, combined with China’s humanoid showcases from Xiaomi and mass-deployment plans from Xpeng, Apptronik and Guangzhou Auto, signals that general-purpose humanoids are moving from speculative demos to near-term industrial deployment across manufacturing, logistics and services.</p>
+  <p class="card-trend"><em>humanoids/robotics, hardware/compute, energy/critical resources, global elite/power consolidation</em></p>
+</article>
+<article class="card" data-category="viral">
+  <header class="card-header">
+    <h2>Africa lines up over $1B coordinated AI investments as enterprises double down on agentic systems</h2>
+  </header>
+  <p class="card-body">The Africa AI Summit’s platform is organizing more than $1 billion in AI initiatives across infrastructure, government programs, startup funds, development finance and enterprise transformation, while surveys show 59% of African companies planning to spend over $50 million on AI in 2026. This combination of sovereign capital, development finance and corporate budgets around agentic AI and workforce transformation points to Africa becoming a significant demand center for compute, data centers and AI talent rather than a peripheral market.</p>
+  <p class="card-trend"><em>energy/critical resources, hardware/compute, migration/demographics, AI/frontier models</em></p>
+</article>
+<article class="card" data-category="viral">
+  <header class="card-header">
+    <h2>India tightens grip on AI-generated deepfakes with rapid takedown and provenance mandates</h2>
+  </header>
+  <p class="card-body">India’s February 2026 IT Rules amendments now treat "synthetically generated information" as a regulated category, requiring provenance metadata and disclaimers on AI-generated content and imposing takedown deadlines as short as three hours (two for impersonation) once authorities issue notices. Layered atop voluntary India AI Governance Guidelines and the DPDP Act’s consent-centric regime, this shows New Delhi converging on a mosaic model where legacy IT law, data protection and targeted AI rules combine to police deepfakes and high-risk deployments without a single omnibus AI statute.</p>
+  <p class="card-trend"><em>security/privacy, AI/frontier models, blockchain/crypto/de-dollarization</em></p>
+</article>
+<article class="card" data-category="wildcard">
+  <header class="card-header">
+    <h2>Ukraine considered AI-guided drone swarms on Moscow airports, hinting at autonomous airspace denial</h2>
+  </header>
+  <p class="card-body">Reporting indicates Ukrainian officials explored plans to deploy swarms of AI-guided drones using map-matching to autonomously seek and strike Moscow’s airports, aiming to disrupt international air traffic without direct human piloting of each drone. Though the plan was reportedly shelved, its serious consideration underscores how AI-enabled autonomy is entering strategic planning for infrastructure denial, foreshadowing future conflicts where airspace and logistics hubs are contested by self-directing drone swarms.</p>
+  <p class="card-trend"><em>security/privacy, space, geopolitics/great-power competition</em></p>
+</article>
+<article class="card" data-category="wildcard">
+  <header class="card-header">
+    <h2>Russia leans on AI-generated battlefield footage as a cognitive warfare tool</h2>
+  </header>
+  <p class="card-body">Analysts tracking the Ukraine war report that Russian sources are increasingly pushing AI-generated or altered battlefield clips to exaggerate advances, with think-tanks flagging synthetic footage as part of a broader cognitive warfare campaign. The normalization of AI-crafted military propaganda suggests future conflicts will feature continuous contests over synthetic battlespaces, pushing platforms and regulators to develop provenance, detection and response mechanisms at scale.</p>
+  <p class="card-trend"><em>security/privacy, blockchain/crypto/de-dollarization, geopolitics/great-power competition</em></p>
+</article>
+<article class="card" data-category="wildcard">
+  <header class="card-header">
+    <h2>Africa pushed as testbed for "green compute" to unlock $1.5T in AI-driven value</h2>
+  </header>
+  <p class="card-body">Policy and industry reports argue that coordinated investment in low-carbon data centers and affordable GPUs could unlock up to $1.5 trillion in annual economic value in Africa from generative and agentic AI, positioning the continent as a laboratory for green compute and data-sovereign public AI. If these green-compute corridors materialize alongside the Africa AI Summit’s $1B initiative platform, they would create new centers of AI infrastructure and talent outside traditional US-EU-China hubs, reshaping where large-scale AI workloads run.</p>
+  <p class="card-trend"><em>energy/critical resources, hardware/compute, migration/demographics, geopolitics/great-power competition</em></p>
+</article>
+        </div>
+        <p id="empty-note" class="empty-note" hidden>Nothing notable in this category for the last 24 hours.</p>
+      </section>
+    </main>
+  </div>
+  <script>
+    (function() {
+      const tabs = Array.from(document.querySelectorAll('.tab'));
+      const cards = Array.from(document.querySelectorAll('.card'));
+      const emptyNote = document.getElementById('empty-note');
+
+      function setActiveTab(target) {
+        tabs.forEach(t => t.dataset.active = (t === target ? 'true' : 'false'));
+      }
+
+      function filterCards(category) {
+        let visibleCount = 0;
+        cards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        emptyNote.hidden = visibleCount !== 0;
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const category = tab.dataset.category;
+          setActiveTab(tab);
+          filterCards(category);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
